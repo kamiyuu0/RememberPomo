@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Remember Pomo",
+  "version": "1.0",
+  "description": "ポモドーロの開始忘れを通知してくれます。",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "scripting",
+    "notifications",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://school.runteq.jp/v3/learning_buddys/pomodoro"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://school.runteq.jp/v3/learning_buddys/pomodoro"],
+      "js": ["content.js"]
+    }
+  ]
+}
