@@ -5,7 +5,7 @@ if (!window.hasContentScriptListener) {
   chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         if (request.action === "getDOMElement") {
-            var element = document.getElementsByClassName("pomodoro-timer-count");
+            const element = document.getElementsByClassName("pomodoro-timer-count");
             if (element[0] != undefined) {
               console.log(element[0]);
               sendResponse({ data: element[0].textContent });
